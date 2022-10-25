@@ -1,0 +1,1 @@
+Дата: 2022-10-25 22:08:30.640197, Имя: <function scraping at 0x000002100EF3ADD0>, Результат: Практическая обработка изображения линии горизонта с помощью Python - https://habr.comhttps://habr.com/ru/company/otus/blog/695462/ , Путь: C:\Users\maksr\Важное\Python\Профессиональная работа с Python\Декораторы\information_logger_file.txt 

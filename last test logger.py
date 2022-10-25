@@ -6,8 +6,7 @@ import bs4
 import requests
 
 
-def summator(number1, number2):
-    return number1 + number2
+#применим написанный логгер
 
 def logger(function):
     def open_write_file(*args, **kwargs):
@@ -15,15 +14,10 @@ def logger(function):
         logger_path = Path(pathlib.Path.cwd(), "information_logger_file.txt")
         with open('information_logger_file.txt', 'a') as ilf:
             result = function(*args, **kwargs)
-            return ilf.write(f'Дата: {date_time}, Имя: {function}, Аргументы:{args}, Результат: {result}, Путь: {logger_path} \n')
+            return ilf.write(f'Дата: {date_time}, Имя: {function}, Результат: {result}, Путь: {logger_path} \n')
 
     return open_write_file
 
-summator = logger(summator)
-summator(87, 10)
-
-
-#применим написанный логгер
 
 def scraping():
     KEYWORDS = ['дизайн', 'фото', 'web', 'python']
@@ -44,6 +38,6 @@ def scraping():
             if key in str(article_webpage):
                 title = article.find(class_="tm-article-snippet__title-link").find('span').text
                 search_time = article.find("time").get("datetime")
-                print(f'{title} - https://habr.com{url} ')
+                return f'{title} - https://habr.com{url} '
 scraping = logger(scraping)
 scraping()
